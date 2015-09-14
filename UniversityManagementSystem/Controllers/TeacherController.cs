@@ -133,5 +133,11 @@ namespace UniversityManagementSystem.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpPost]
+        public JsonResult DoesEmailExist(string Email)
+        {
+
+            return Json((!db.Teacher.Any(x => x.Email == Email)), JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using UniversityManagementSystem.BAL;
 
 namespace UniversityManagementSystem.Models
@@ -22,7 +23,7 @@ namespace UniversityManagementSystem.Models
         [Required(ErrorMessage = "You Must Fill Email Field")]
         [Index(IsUnique = true)]
         [MaxLength(32)]
-        //[Remote("DoesCodeNameExist", "Teacher", HttpMethod = "POST", ErrorMessage = "Email address exist")]
+        [Remote("DoesEmailExist", "Teacher", HttpMethod = "POST", ErrorMessage = "Email address exist")]
 
         public string Email { get; set; }
         public string ContactNo { get; set; }
