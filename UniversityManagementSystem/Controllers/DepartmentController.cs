@@ -124,5 +124,21 @@ namespace UniversityManagementSystem.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public JsonResult DoesCodeNameExist(string DepartmentCode)
+        {
+
+            return Json((!db.Department.Any(x => x.DepartmentCode == DepartmentCode)), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult DoesNameExist(string DepartmentName)
+        {
+
+            return Json((!db.Department.Any(x => x.DepartmentName == DepartmentName)), JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }

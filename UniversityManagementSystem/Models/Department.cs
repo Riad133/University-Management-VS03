@@ -18,7 +18,7 @@ namespace UniversityManagementSystem.Models
         [Index(IsUnique = true)]
         [MaxLength(32)]
         [StringLength(7, ErrorMessage = "The {0} must be at least {2} characters long and less then 8 characters.", MinimumLength = 2)]
-        [Remote("DoesCodeNameExist", "Departments", HttpMethod = "POST", ErrorMessage = "Department Code exist")]
+        [Remote("DoesCodeNameExist", "Department", HttpMethod = "POST", ErrorMessage = "Department Code exist")]
 
         public string DepartmentCode { get; set; }
 
@@ -26,6 +26,8 @@ namespace UniversityManagementSystem.Models
         [Required(ErrorMessage = "You Must Fill Department Name Field")]
         [Index(IsUnique = true)]
         [MaxLength(32)]
+        [Remote("DoesNameExist", "Department", HttpMethod = "POST", ErrorMessage = "Department Name exist")]
+
         public string DepartmentName { get; set; }
         public virtual List<Course> Courses { set; get; } 
     }

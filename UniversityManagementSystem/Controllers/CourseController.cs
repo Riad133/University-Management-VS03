@@ -133,5 +133,13 @@ namespace UniversityManagementSystem.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public JsonResult DoesCodeExist(string Code)
+        {
+
+            return Json((!db.Course.Any(x => x.Code == Code)), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

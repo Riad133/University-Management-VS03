@@ -18,7 +18,7 @@ namespace UniversityManagementSystem.Models
         [MaxLength(32)]
         [Index(IsUnique = true)]
         [StringLength(30, ErrorMessage = "{0} must be at list {2}", MinimumLength = 5)]
-        [Remote("DoesCodeNameExist", "Departments", HttpMethod = "POST", ErrorMessage = "Department Code exist")]
+        [Remote("DoesCodeExist", "Course", HttpMethod = "POST", ErrorMessage = "Code exist")]
 
         public string Code { get; set; }
         [Range(.5,5, ErrorMessage = "Credit must between  .5  to 5")]
