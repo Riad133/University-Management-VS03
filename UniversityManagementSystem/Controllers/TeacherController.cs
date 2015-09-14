@@ -18,7 +18,7 @@ namespace UniversityManagementSystem.Controllers
         // GET: Teacher
         public ActionResult Index()
         {
-            var teacher = db.Teacher.Include(t => t.Department);
+            var teacher = db.Teacher.Include(t => t.Department).Include(t => t.Designation);
             return View(teacher.ToList());
         }
 
@@ -41,6 +41,7 @@ namespace UniversityManagementSystem.Controllers
         public ActionResult Create()
         {
             ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "DepartmentCode");
+            ViewBag.DesignationId = new SelectList(db.Designation, "DesignationId", "DesignationName");
             return View();
         }
 
@@ -59,6 +60,7 @@ namespace UniversityManagementSystem.Controllers
             }
 
             ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "DepartmentCode", teacher.DepartmentId);
+            ViewBag.DesignationId = new SelectList(db.Designation, "DesignationId", "DesignationName", teacher.DesignationId);
             return View(teacher);
         }
 
@@ -75,6 +77,7 @@ namespace UniversityManagementSystem.Controllers
                 return HttpNotFound();
             }
             ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "DepartmentCode", teacher.DepartmentId);
+            ViewBag.DesignationId = new SelectList(db.Designation, "DesignationId", "DesignationName", teacher.DesignationId);
             return View(teacher);
         }
 
@@ -92,6 +95,7 @@ namespace UniversityManagementSystem.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.DepartmentId = new SelectList(db.Department, "DepartmentId", "DepartmentCode", teacher.DepartmentId);
+            ViewBag.DesignationId = new SelectList(db.Designation, "DesignationId", "DesignationName", teacher.DesignationId);
             return View(teacher);
         }
 

@@ -128,13 +128,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201509141953046_InitialCreate.cs" />
-    <Compile Include="Migrations\201509141953046_InitialCreate.Designer.cs">
-      <DependentUpon>201509141953046_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509141955409_init.cs" />
-    <Compile Include="Migrations\201509141955409_init.Designer.cs">
-      <DependentUpon>201509141955409_init.cs</DependentUpon>
+    <Compile Include="Migrations\201509142116264_initvs01.cs" />
+    <Compile Include="Migrations\201509142116264_initvs01.Designer.cs">
+      <DependentUpon>201509142116264_initvs01.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -196,11 +192,6 @@
     <Content Include="Views\Course\Details.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
-    <Content Include="Views\Teacher\Create.cshtml" />
-    <Content Include="Views\Teacher\Delete.cshtml" />
-    <Content Include="Views\Teacher\Details.cshtml" />
-    <Content Include="Views\Teacher\Edit.cshtml" />
-    <Content Include="Views\Teacher\Index.cshtml" />
     <Content Include="Views\Semester\Create.cshtml" />
     <Content Include="Views\Semester\Delete.cshtml" />
     <Content Include="Views\Semester\Details.cshtml" />
@@ -211,6 +202,11 @@
     <Content Include="Views\Designation\Details.cshtml" />
     <Content Include="Views\Designation\Edit.cshtml" />
     <Content Include="Views\Designation\Index.cshtml" />
+    <Content Include="Views\Teacher\Create.cshtml" />
+    <Content Include="Views\Teacher\Delete.cshtml" />
+    <Content Include="Views\Teacher\Details.cshtml" />
+    <Content Include="Views\Teacher\Edit.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -220,11 +216,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509141953046_InitialCreate.resx">
-      <DependentUpon>201509141953046_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509141955409_init.resx">
-      <DependentUpon>201509141955409_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509142116264_initvs01.resx">
+      <DependentUpon>201509142116264_initvs01.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

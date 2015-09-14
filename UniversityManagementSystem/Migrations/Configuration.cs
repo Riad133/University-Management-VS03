@@ -46,6 +46,24 @@ namespace UniversityManagementSystem.Migrations
 
             Semester.ForEach(s => context.Semester.AddOrUpdate(p => p.SemesterNO, s));
             context.SaveChanges();
+
+
+            var Desination = new List<Designation>
+            {
+                new Designation{ DesignationName = "Lecturer"},
+                
+                new Designation{ DesignationName = "Assistant professor"},
+                                
+                new Designation{ DesignationName = "Associate professor"},
+                
+                new Designation{ DesignationName = "Professor"}
+
+
+            };
+
+            Desination.ForEach(s => context.Designation.AddOrUpdate(p => p.DesignationName, s));
+            context.SaveChanges();
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,9 @@ namespace UniversityManagementSystem.BAL
 {
      public class Designation
     {
+         [Key]
+         public int DesignationId { set; get; }
 
-        public int DesignationId { set; get; }
-
-         [DisplayName("Designation")]
-        public string DesignationName { set; get; }
+     public string DesignationName { set; get; }
     }
 }

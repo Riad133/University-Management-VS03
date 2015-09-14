@@ -3,7 +3,7 @@ namespace UniversityManagementSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initvs01 : DbMigration
     {
         public override void Up()
         {
@@ -66,28 +66,27 @@ namespace UniversityManagementSystem.Migrations
                         Address = c.String(),
                         Email = c.String(nullable: false, maxLength: 32),
                         ContactNo = c.String(),
-                        DesignationId = c.String(nullable: false),
+                        DesignationId = c.Int(nullable: false),
                         DepartmentId = c.Int(nullable: false),
                         Credit = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Designation_DesignationId = c.Int(),
                     })
                 .PrimaryKey(t => t.TeacherId)
                 .ForeignKey("dbo.Departments", t => t.DepartmentId, cascadeDelete: true)
-                .ForeignKey("dbo.Designations", t => t.Designation_DesignationId)
+                .ForeignKey("dbo.Designations", t => t.DesignationId, cascadeDelete: true)
                 .Index(t => t.Email, unique: true)
-                .Index(t => t.DepartmentId)
-                .Index(t => t.Designation_DesignationId);
+                .Index(t => t.DesignationId)
+                .Index(t => t.DepartmentId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Teachers", "Designation_DesignationId", "dbo.Designations");
+            DropForeignKey("dbo.Teachers", "DesignationId", "dbo.Designations");
             DropForeignKey("dbo.Teachers", "DepartmentId", "dbo.Departments");
             DropForeignKey("dbo.Courses", "SemesterId", "dbo.Semesters");
             DropForeignKey("dbo.Courses", "DepartmentId", "dbo.Departments");
-            DropIndex("dbo.Teachers", new[] { "Designation_DesignationId" });
             DropIndex("dbo.Teachers", new[] { "DepartmentId" });
+            DropIndex("dbo.Teachers", new[] { "DesignationId" });
             DropIndex("dbo.Teachers", new[] { "Email" });
             DropIndex("dbo.Departments", new[] { "DepartmentName" });
             DropIndex("dbo.Departments", new[] { "DepartmentCode" });
