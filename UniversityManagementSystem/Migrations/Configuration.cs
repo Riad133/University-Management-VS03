@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using UniversityManagementSystem.BAL;
+
 namespace UniversityManagementSystem.Migrations
 {
     using System;
@@ -27,6 +30,22 @@ namespace UniversityManagementSystem.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var Semester = new List<Semester>
+            {
+                new Semester {SemesterNO = 1},
+                new Semester {SemesterNO = 2},
+                new Semester {SemesterNO = 3},
+                new Semester {SemesterNO = 4},
+                new Semester {SemesterNO = 5},
+                new Semester {SemesterNO = 6},
+                new Semester {SemesterNO = 7},
+                new Semester {SemesterNO = 8}
+
+            };
+
+            Semester.ForEach(s => context.Semester.AddOrUpdate(p => p.SemesterNO, s));
+            context.SaveChanges();
         }
     }
 }
