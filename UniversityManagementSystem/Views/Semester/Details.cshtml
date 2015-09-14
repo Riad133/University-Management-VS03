@@ -1,0 +1,26 @@
+﻿@model UniversityManagementSystem.BAL.Semester
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Semester</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SemesterNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SemesterNO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SemesterId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
