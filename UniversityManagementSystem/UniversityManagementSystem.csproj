@@ -128,9 +128,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201509142116264_initvs01.cs" />
-    <Compile Include="Migrations\201509142116264_initvs01.Designer.cs">
-      <DependentUpon>201509142116264_initvs01.cs</DependentUpon>
+    <Compile Include="Migrations\201509151926279_teacherupdated.cs" />
+    <Compile Include="Migrations\201509151926279_teacherupdated.Designer.cs">
+      <DependentUpon>201509151926279_teacherupdated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -216,8 +216,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509142116264_initvs01.resx">
-      <DependentUpon>201509142116264_initvs01.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509151926279_teacherupdated.resx">
+      <DependentUpon>201509151926279_teacherupdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

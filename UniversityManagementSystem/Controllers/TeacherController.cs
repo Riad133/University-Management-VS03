@@ -54,6 +54,7 @@ namespace UniversityManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                teacher.CreditTaken = 0;
                 db.Teacher.Add(teacher);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -86,7 +87,7 @@ namespace UniversityManagementSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TeacherId,Name,Address,Email,ContactNo,DesignationId,DepartmentId,Credit")] Teacher teacher)
+        public ActionResult Edit([Bind(Include = "TeacherId,Name,Address,Email,ContactNo,DesignationId,DepartmentId,Credit,CreditTaken")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {

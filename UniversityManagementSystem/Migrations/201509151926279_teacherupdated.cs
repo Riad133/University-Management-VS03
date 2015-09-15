@@ -3,7 +3,7 @@ namespace UniversityManagementSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initvs01 : DbMigration
+    public partial class teacherupdated : DbMigration
     {
         public override void Up()
         {
@@ -69,6 +69,7 @@ namespace UniversityManagementSystem.Migrations
                         DesignationId = c.Int(nullable: false),
                         DepartmentId = c.Int(nullable: false),
                         Credit = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        CreditTaken = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.TeacherId)
                 .ForeignKey("dbo.Departments", t => t.DepartmentId, cascadeDelete: true)

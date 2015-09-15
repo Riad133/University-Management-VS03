@@ -11,9 +11,8 @@ using UniversityManagementSystem.BAL;
 
 namespace UniversityManagementSystem.Models
 {
-   public class Teacher
+    public class Teacher
     {
-
         [Key]
         public int TeacherId { get; set; }
         [Required(ErrorMessage = "You Must Fill Name Field")]
@@ -27,16 +26,16 @@ namespace UniversityManagementSystem.Models
 
         public string Email { get; set; }
         public string ContactNo { get; set; }
-      //  [DisplayName("Designation")]
+        [DisplayName("Designation")]
         public int DesignationId { get; set; }
 
         public int DepartmentId { get; set; }
         [Required(ErrorMessage = "You Must Fill Course Credit Field")]
         [Range(0, 500, ErrorMessage = "Invalid")]
         public decimal Credit { get; set; }
+        public decimal CreditTaken { get; set; }
 
         public virtual Department Department { get; set; }
         public virtual Designation Designation { get; set; }
-
     }
 }
